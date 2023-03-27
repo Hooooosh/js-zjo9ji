@@ -1,0 +1,88 @@
+metóduksok névvel ellátott utasítássorozat
+fajták:
+	nem void - függvény
+	void - eljárás
+
+minősítők típus Funkciónév (paraméterek)
+{
+	asdasd
+	return típusos dolog (ha nem void)
+}
+
+minősítők: 
+privát:
+	osztályon kívül nem elérhető
+public:
+	osztályon kívülről elérhető
+static:
+	egy példányban jön létre
+
+Típus: bárilyen típus vagy void
+Formális paraméterek: paraméterek
+
+
+érték szerinti paraméterátadás:
+	a paraméter értékét lemásolja, az eredeti érték nem változik meg
+	alapértelmezett átadási mód
+cím szerinti:
+	a változó címét adja át, minden módosítás megváltoztatja az eredeti értéket is
+	két fajta? ref és out paraméterátadás
+	a paramáter típusa elé kell írni a megfelelő kulcsszót (a formális és aktuális paraméterben is!)
+ref (referencia szerinti):
+	akor használjuk, ha az átadott változó már rendelkezik értékkel, és azt a metódus meg fogja váloztatni.
+out (kimeő paraméterátaás):
+	akkor használjuk, ha az átadott váltoó még nem rendelkezik értékkel, és azt a netódustól fogja megkapni
+
+Csere eljárás:
+void Csere(ref int x, ref int y)
+{
+	int s = x;
+	x = y;
+	y = s;
+}
+Csere(ref x, ref y)
+
+
+System.IO
+fájlkezelés alaposzály: Stream
+string path="C:\\a\\b.txt"
+string path=@"C:\a\b.txt"
+Beolvasás:
+if(File.Exists(filename)) { }
+
+StreamReader f = File.OpenText(filename) { }
+while (!f.EndOfStream) { }
+string sor = f.ReadLine()
+f.Close()
+
+StreamWriter f = File.CreateText(filename)
+itt nem kell használni az endofstreamet
+
+f.WriteLine(valami sor)
+a file bezárása kötelező! : f.Close()
+
+StreamWriter f = File.ApendText(filename)
+karakterjodolas :
+ASCII
+UTF
+
+Encoding.ASCII - American standard code for infomation interchange
+Encoding.UTF8 - unicode transformation format
+Encoding.Default - op rendszer alapértelezettje
+pl.:
+StreamReader f = new StreamReader("C:\\proba.txt", Encoding.Default)
+
+
+Dictionarik:
+Dict.ContainsKey("asd")
+Dict.ContainsValue("asd")
+Dict.Remove("key")
+int szam = dict.Count()
+dict.Clear()
+
+foreach(KeyValuePair<string, string> elem in fovarosok)
+vagy
+foreach(var elem in fovarosok)
+
+foreach (var elem in szamok.OrderBy(key => key.Value)) { }
+foreach (var elem in szamok.OrderBy(key => key.Key)) { }
